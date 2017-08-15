@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VMSystemsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="VMSystem">
+          <Key>
+            <PropertyRef Name="VMID" />
+          </Key>
+          <Property Name="VMID" Type="int" Nullable="false" />
+          <Property Name="VFirstName" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="VLastName" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="VEmail" Type="nchar" MaxLength="256" Nullable="false" />
+          <Property Name="VUsername" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="VPassword" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="VMobile" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="VMSystemsModelStoreContainer">
+          <EntitySet Name="VMSystem" EntityType="Self.VMSystem" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VMSystemsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="VMSystem">
+          <Key>
+            <PropertyRef Name="VMID" />
+          </Key>
+          <Property Name="VMID" Type="Int32" Nullable="false" />
+          <Property Name="VFirstName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VLastName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VEmail" Type="String" MaxLength="256" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="VUsername" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VPassword" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="VMSystemsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VMSystems" EntityType="Self.VMSystem" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VMSystemsModelStoreContainer" CdmEntityContainer="VMSystemsEntities">
+          <EntitySetMapping Name="VMSystems">
+            <EntityTypeMapping TypeName="VMSystemsModel.VMSystem">
+              <MappingFragment StoreEntitySet="VMSystem">
+                <ScalarProperty Name="VMID" ColumnName="VMID" />
+                <ScalarProperty Name="VFirstName" ColumnName="VFirstName" />
+                <ScalarProperty Name="VLastName" ColumnName="VLastName" />
+                <ScalarProperty Name="VEmail" ColumnName="VEmail" />
+                <ScalarProperty Name="VUsername" ColumnName="VUsername" />
+                <ScalarProperty Name="VPassword" ColumnName="VPassword" />
+                <ScalarProperty Name="VMobile" ColumnName="VMobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
