@@ -18,6 +18,7 @@ namespace VMS.Controllers
 
         public ActionResult Index()
         {
+            //Weeeeee
             return View();
         }
 
