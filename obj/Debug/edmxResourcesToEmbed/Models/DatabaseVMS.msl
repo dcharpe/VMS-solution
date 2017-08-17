@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VMSystemsModelStoreContainer" CdmEntityContainer="VMSystemsEntities">
+    <EntitySetMapping Name="VMSystems">
+      <EntityTypeMapping TypeName="VMSystemsModel.VMSystem">
+        <MappingFragment StoreEntitySet="VMSystem">
+          <ScalarProperty Name="VMID" ColumnName="VMID" />
+          <ScalarProperty Name="VFirstName" ColumnName="VFirstName" />
+          <ScalarProperty Name="VLastName" ColumnName="VLastName" />
+          <ScalarProperty Name="VEmail" ColumnName="VEmail" />
+          <ScalarProperty Name="VUsername" ColumnName="VUsername" />
+          <ScalarProperty Name="VPassword" ColumnName="VPassword" />
+          <ScalarProperty Name="VMobile" ColumnName="VMobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

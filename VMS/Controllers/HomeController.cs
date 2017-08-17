@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using VMS.Models;
 
 namespace VMS.Controllers
@@ -46,7 +49,49 @@ namespace VMS.Controllers
 
         public ActionResult Welcome()
         {
-            return View();
+            if (Session["VUsername"] == null)
+            {
+                return RedirectToAction("Login");
+
+
+            }
+            else
+            {
+                return View();
+
+            }
+
+
+        }
+
+        public ActionResult Volunteer()
+        {
+            if (Session["VUsername"] == null)
+            {
+                return RedirectToAction("Login");
+
+               
+            }
+            else
+            {
+                return View();
+                
+        }
+        }
+        
+        public ActionResult Opportunity()
+        {
+            if (Session["VUsername"] == null)
+            {
+                return RedirectToAction("Login");
+
+
+            }
+            else
+            {
+                return View();
+
+            }
         }
         public ActionResult Login()
         {
@@ -89,5 +134,14 @@ namespace VMS.Controllers
 
             return View();
         }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon(); // it will clear the session at the end of request
+            return RedirectToAction("Login", "Home");
+        }
+
+       
     }
 }

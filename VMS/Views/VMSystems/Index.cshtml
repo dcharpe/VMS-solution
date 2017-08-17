@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VMS.Models.VMSystem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VMobile)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VMobile)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VMID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VMID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VMID })
+        </td>
+    </tr>
+}
+
+</table>

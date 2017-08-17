@@ -1,0 +1,66 @@
+﻿@model VMS.Models.VMSystem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VMSystem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VMobile)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VMID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
