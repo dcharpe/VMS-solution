@@ -19,6 +19,7 @@ namespace VMS.Controllers
         public ActionResult Index()
         {
             //Weeeeee
+            //Test
             return View();
         }
 
