@@ -169,9 +169,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseVMS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\VMSDbContext.cs" />
     <Compile Include="Models\VMSystem.cs">
       <DependentUpon>DatabaseVMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

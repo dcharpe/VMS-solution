@@ -1,25 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using VMS.Models;
 
 namespace VMS.Controllers
 {
-    
+
 
     public class HomeController : Controller
     {
-        private VMSystemsEntities db = new VMSystemsEntities();
+        //private VMSystemsEntities db = new VMSystemsEntities();
 
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm)
         {
+            var listOfVolunteers = new List<Volunteer>();
             //Weeeeee
-            return View();
+            using(var context = new VMSDbContext())
+            {
+                listOfVolunteers = context.Volunteers.Where(v => v.FirstName == searchTerm)
+                                                     .OrderBy(v => v.LastName)
+                                                     .ToList();
+            }
+
+            return View(listOfVolunteers);
         }
 
         public ActionResult About()
