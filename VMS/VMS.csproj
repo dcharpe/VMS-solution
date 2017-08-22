@@ -150,9 +150,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OpportunityController.cs" />
+    <Compile Include="Controllers\VMSystemsController.cs" />
+    <Compile Include="Controllers\VPStatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomerCustom.cs" />
     <Compile Include="Models\DatabaseVMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,21 +172,55 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseVMS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Odb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Odb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Odb.cs">
+      <DependentUpon>Odb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Odb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Odb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Odb1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Odb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SortAndPage.cs" />
     <Compile Include="Models\VMSystem.cs">
       <DependentUpon>DatabaseVMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VPStatu.cs">
+      <DependentUpon>VPStatus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VPStatus.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VPStatus.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VPStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VPStatus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VPStatus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VPStatus.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\demo.css" />
-    <Content Include="Content\light-bootstrap-dashboard.css" />
-    <Content Include="Content\pe-icon-7-stroke.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\Pe-icon-7-stroke.svg" />
-    <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
     <Content Include="Models\DatabaseVMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DatabaseVMS.Context.cs</LastGenOutput>
@@ -203,27 +241,55 @@
     <Content Include="Models\DatabaseVMS.edmx.diagram">
       <DependentUpon>DatabaseVMS.edmx</DependentUpon>
     </Content>
-    <Content Include="fonts\Pe-icon-7-stroke.eot" />
-    <Content Include="fonts\Pe-icon-7-stroke.ttf" />
-    <Content Include="fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="Models\VPStatus.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VPStatus.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Odb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Odb.edmx</DependentUpon>
+      <LastGenOutput>Odb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Odb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Odb.edmx</DependentUpon>
+      <LastGenOutput>Odb1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\VPStatus.edmx.diagram">
+      <DependentUpon>VPStatus.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Odb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Odb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Odb.edmx.diagram">
+      <DependentUpon>Odb.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <Content Include="Scripts\bootstrap-checkbox-radio-switch.js" />
-    <Content Include="Scripts\bootstrap-notify.js" />
-    <Content Include="Scripts\bootstrap-select.js" />
+    <Content Include="Models\VPStatus.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VPStatus.edmx</DependentUpon>
+      <LastGenOutput>VPStatus.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\VPStatus.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VPStatus.edmx</DependentUpon>
+      <LastGenOutput>VPStatus.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\chartist.min.js" />
-    <Content Include="Scripts\demo.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\light-bootstrap-dashboard.js" />
-    <Content Include="Views\Home\dashboard.html" />
-    <Content Include="Views\Home\icons.html" />
-    <Content Include="Views\Home\maps.html" />
-    <Content Include="Views\Home\notifications.html" />
-    <Content Include="Views\Home\table.html" />
-    <Content Include="Views\Home\template.html" />
-    <Content Include="Views\Home\typography.html" />
-    <Content Include="Views\Home\upgrade.html" />
-    <Content Include="Views\Home\user.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -241,6 +307,25 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Volunteer.cshtml" />
+    <Content Include="Views\Home\Opportunity.cshtml" />
+    <Content Include="Views\Home\Logout.cshtml" />
+    <Content Include="Views\VMSystems\Create.cshtml" />
+    <Content Include="Views\VMSystems\Delete.cshtml" />
+    <Content Include="Views\VMSystems\Details.cshtml" />
+    <Content Include="Views\VMSystems\Edit.cshtml" />
+    <Content Include="Views\VMSystems\Index.cshtml" />
+    <Content Include="Views\VPStatus\Create.cshtml" />
+    <Content Include="Views\VPStatus\Delete.cshtml" />
+    <Content Include="Views\VPStatus\Details.cshtml" />
+    <Content Include="Views\VPStatus\Edit.cshtml" />
+    <Content Include="Views\VPStatus\Index.cshtml" />
+    <Content Include="Views\Opportunity\Create.cshtml" />
+    <Content Include="Views\Opportunity\Delete.cshtml" />
+    <Content Include="Views\Opportunity\Details.cshtml" />
+    <Content Include="Views\Opportunity\Edit.cshtml" />
+    <Content Include="Views\Opportunity\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

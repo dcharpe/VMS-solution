@@ -1,0 +1,148 @@
+﻿@model VMS.Models.CustomerCustom
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome to your Opportunity Management Center</h2>
+<br />
+<p>Change Opportunity Filter</p>
+@*@<li>@Html.ActionLink("Most Recent (60 days)", "MostRecent")</li>
+<li>@Html.ActionLink("Center", "Center")</li>
+<br />
+@Html.ActionLink("Search Opportunity", "Search", "Opportunities")
+<br />
+@Html.ActionLink("View Volunteer Opportunity Matches", "Matches", "Opportunities")
+<br />
+<br />
+*@
+<p>
+    @Html.ActionLink("Add New Opportunity", "Create")
+</p>
+
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("SortField", Model.SortField)
+    @Html.Hidden("SortDirection", Model.SortDirection)
+    @Html.Hidden("PageCount", Model.PageCount)
+    @Html.Hidden("PageSize", Model.PageSize)
+    @Html.Hidden("CurrentPageIndex", Model.CurrentPageIndex)
+
+    @Html.Hidden("SelectedFirstName", Model.SelectedFirstName)
+    @Html.Hidden("SelectedLastName", Model.SelectedLastName)
+
+<table class="table">
+    <tr>
+        <th>
+            <a href="#fn" data-sortfield="Location" class="header">
+                @Html.DisplayNameFor(model => model.cust.First().OName)
+</th>
+
+        <th>
+            <a href="#" data-sortfield="Skills" class="header">
+                @Html.DisplayNameFor(model => model.cust.First().ODate)
+</th>
+        <th>
+            <a href="#" data-sortfield="Date" class="header">
+                @Html.DisplayNameFor(model => model.cust.First().OCenter)
+</th>
+        <th>
+            <a href="#" data-sortfield="Name" class="header">
+                @Html.DisplayNameFor(model => model.cust.First().OSkills)
+</th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            @Html.DropDownListFor(model => model.SelectedFirstName,
+            new SelectList(Model.custDDL, "OCenter", "OCenter", Model.SelectedFirstName), "All", new { @id = "fn" })
+        </th>
+        <th>
+            @Html.DropDownListFor(model => model.SelectedLastName,
+            new SelectList(Model.custDDL, "OSkills", "OCenter", Model.SelectedLastName), "All", new { @id = "ln" })
+        </th>
+
+    </tr>
+
+
+@foreach (var item in Model.cust) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ODate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OCenter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OSkills)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VOppID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VOppID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VOppID })
+        </td>
+    </tr>
+}
+    <tr>
+        <td colspan="4">
+            @for (var i = 0; i < Model.PageCount; i++)
+            {
+                if (i == Model.CurrentPageIndex)
+                {
+                    <span class="current-pager" id="CurrentPageIndex">@(i + 1)</span>
+                }
+                else
+                {
+                    <a href="#" data-pageindex="@i" class="pager">@(i + 1)</a>
+                }
+            }
+        </td>
+    </tr>
+
+</table>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".header").click(function (evt) {
+            var sortfield = $(evt.target).data("sortfield");
+            if ($("#SortField").val() == sortfield) {
+                if ($("#SortDirection").val() == "ascending") {
+                    $("#SortDirection").val("descending");
+                }
+                else{
+                    $("#SortDirection").val("ascending");
+                }
+            }
+            else {
+                $("#SortField").val(sortfield);
+                $("#SortDirection").val("ascending");
+            }
+            evt.preventDefault();
+            $("form").submit();
+
+        });
+
+        $(".pager").click(function (evt) {
+            var pageindex = $(evt.target).data("pageindex");
+            $("#CurrentPageIndex").val(pageindex);
+            evt.preventDefault();
+            $("form").submit();
+        });
+
+        $("#fn").change(function (evt) {
+            $("#SelectedFirstName").val($("#fn").val().trim());
+            evt.preventDefault();
+            $("form").submit();
+        })
+        $("#ln").change(function (evt) {
+            $("#SelectedLastName").val($("#ln").val().trim());
+            evt.preventDefault();
+            $("form").submit();
+        })
+    });
+</script>

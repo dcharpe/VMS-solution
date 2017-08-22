@@ -1,0 +1,106 @@
+﻿@model VMS.Models.VPStatu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VPStatu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VPFName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPFName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPLName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPLName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPCenter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPCenter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPSkills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPSkills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPAvailability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPAvailability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VPID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

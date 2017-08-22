@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VPeopleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PeopleInfo">
+    <Key>
+      <PropertyRef Name="PID" />
+      <PropertyRef Name="PFName" />
+      <PropertyRef Name="PLName" />
+      <PropertyRef Name="PUsername" />
+      <PropertyRef Name="PPassword" />
+      <PropertyRef Name="PSkills" />
+      <PropertyRef Name="PAddress" />
+      <PropertyRef Name="PPhone" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" />
+    <Property Name="PFName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PLName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PCenter" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PSkills" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PAvailability" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PPhone" Type="Int32" Nullable="false" />
+    <Property Name="PEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PEducation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PECName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PECPhone" Type="Int32" />
+    <Property Name="PECEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PECAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PCopyLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PCopySSn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="VPeopleEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PeopleInfoes" EntityType="Self.PeopleInfo" />
+  </EntityContainer>
+</Schema>

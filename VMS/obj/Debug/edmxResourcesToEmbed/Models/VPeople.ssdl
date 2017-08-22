@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VPeopleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'VPeople.dbo.PeopleInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PeopleInfo">
+    <Key>
+      <PropertyRef Name="PID" />
+      <PropertyRef Name="PFName" />
+      <PropertyRef Name="PLName" />
+      <PropertyRef Name="PUsername" />
+      <PropertyRef Name="PPassword" />
+      <PropertyRef Name="PSkills" />
+      <PropertyRef Name="PAddress" />
+      <PropertyRef Name="PPhone" />
+    </Key>
+    <Property Name="PID" Type="int" Nullable="false" />
+    <Property Name="PFName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PLName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PUsername" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PPassword" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PCenter" Type="varchar" MaxLength="255" />
+    <Property Name="PSkills" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PAvailability" Type="varchar" MaxLength="255" />
+    <Property Name="PAddress" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PPhone" Type="int" Nullable="false" />
+    <Property Name="PEmail" Type="varchar" MaxLength="255" />
+    <Property Name="PEducation" Type="varchar" MaxLength="255" />
+    <Property Name="PLicense" Type="varchar" MaxLength="50" />
+    <Property Name="PECName" Type="varchar" MaxLength="255" />
+    <Property Name="PECPhone" Type="int" />
+    <Property Name="PECEmail" Type="varchar" MaxLength="255" />
+    <Property Name="PECAddress" Type="varchar" MaxLength="255" />
+    <Property Name="PCopyLicense" Type="varchar" MaxLength="50" />
+    <Property Name="PCopySSn" Type="varchar" MaxLength="50" />
+    <Property Name="PStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="VPeopleModelStoreContainer">
+    <EntitySet Name="PeopleInfo" EntityType="Self.PeopleInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PeopleInfo].[PID] AS [PID], 
+    [PeopleInfo].[PFName] AS [PFName], 
+    [PeopleInfo].[PLName] AS [PLName], 
+    [PeopleInfo].[PUsername] AS [PUsername], 
+    [PeopleInfo].[PPassword] AS [PPassword], 
+    [PeopleInfo].[PCenter] AS [PCenter], 
+    [PeopleInfo].[PSkills] AS [PSkills], 
+    [PeopleInfo].[PAvailability] AS [PAvailability], 
+    [PeopleInfo].[PAddress] AS [PAddress], 
+    [PeopleInfo].[PPhone] AS [PPhone], 
+    [PeopleInfo].[PEmail] AS [PEmail], 
+    [PeopleInfo].[PEducation] AS [PEducation], 
+    [PeopleInfo].[PLicense] AS [PLicense], 
+    [PeopleInfo].[PECName] AS [PECName], 
+    [PeopleInfo].[PECPhone] AS [PECPhone], 
+    [PeopleInfo].[PECEmail] AS [PECEmail], 
+    [PeopleInfo].[PECAddress] AS [PECAddress], 
+    [PeopleInfo].[PCopyLicense] AS [PCopyLicense], 
+    [PeopleInfo].[PCopySSn] AS [PCopySSn], 
+    [PeopleInfo].[PStatus] AS [PStatus]
+    FROM [dbo].[PeopleInfo] AS [PeopleInfo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

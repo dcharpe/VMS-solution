@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VPrimaryModelStoreContainer" CdmEntityContainer="VPrimaryEntities">
+    <EntitySetMapping Name="VPStatus">
+      <EntityTypeMapping TypeName="VPrimaryModel.VPStatu">
+        <MappingFragment StoreEntitySet="VPStatus">
+          <ScalarProperty Name="VPID" ColumnName="VPID" />
+          <ScalarProperty Name="VPFName" ColumnName="VPFName" />
+          <ScalarProperty Name="VPLName" ColumnName="VPLName" />
+          <ScalarProperty Name="VPUsername" ColumnName="VPUsername" />
+          <ScalarProperty Name="VPPassword" ColumnName="VPPassword" />
+          <ScalarProperty Name="VPCenter" ColumnName="VPCenter" />
+          <ScalarProperty Name="VPSkills" ColumnName="VPSkills" />
+          <ScalarProperty Name="VPAvailability" ColumnName="VPAvailability" />
+          <ScalarProperty Name="PAddress" ColumnName="PAddress" />
+          <ScalarProperty Name="VPhone" ColumnName="VPhone" />
+          <ScalarProperty Name="VPEmail" ColumnName="VPEmail" />
+          <ScalarProperty Name="VPStatus" ColumnName="VPStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

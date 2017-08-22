@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
+    <EntitySetMapping Name="Odbs">
+      <EntityTypeMapping TypeName="dbModel.Odb">
+        <MappingFragment StoreEntitySet="Odb">
+          <ScalarProperty Name="VOppID" ColumnName="VOppID" />
+          <ScalarProperty Name="OName" ColumnName="OName" />
+          <ScalarProperty Name="ODate" ColumnName="ODate" />
+          <ScalarProperty Name="OCenter" ColumnName="OCenter" />
+          <ScalarProperty Name="OSkills" ColumnName="OSkills" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

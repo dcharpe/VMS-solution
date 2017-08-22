@@ -1,0 +1,50 @@
+﻿@model VMS.Models.Odb
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Odb</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OCenter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OCenter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OSkills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OSkills)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VOppID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

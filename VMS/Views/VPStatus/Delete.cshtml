@@ -1,0 +1,112 @@
+﻿@model VMS.Models.VPStatu
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VPStatu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VPFName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPFName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPLName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPLName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPCenter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPCenter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPSkills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPSkills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPAvailability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPAvailability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VPStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VPStatus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

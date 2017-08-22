@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VPrimaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="VPStatu">
+    <Key>
+      <PropertyRef Name="VPID" />
+    </Key>
+    <Property Name="VPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VPFName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VPLName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VPUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VPPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VPCenter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VPSkills" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VPAvailability" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VPhone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="VPEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="VPStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="VPrimaryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="VPStatus" EntityType="Self.VPStatu" />
+  </EntityContainer>
+</Schema>

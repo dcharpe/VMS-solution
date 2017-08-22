@@ -1,0 +1,102 @@
+﻿@model IEnumerable<VMS.Models.VPStatu>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Volunteer Database</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+  
+</p>
+<p>
+    @using (Html.BeginForm("Index", "VPStatus", FormMethod.Get))
+    {
+    <b>Search By:</b> @Html.RadioButton("searchBy", "VPStatus", true) <text>Status</text>
+    @Html.RadioButton("searchBy", "VPSkills") <text>Skills</text> 
+    @Html.TextBox("search") <input type="submit" value="Search" />
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VPFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPCenter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPSkills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPAvailability)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VPStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPFName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPLName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPCenter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPSkills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPAvailability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VPStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VPID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VPID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VPID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VPeopleModelStoreContainer" CdmEntityContainer="VPeopleEntities">
+    <EntitySetMapping Name="PeopleInfoes">
+      <EntityTypeMapping TypeName="VPeopleModel.PeopleInfo">
+        <MappingFragment StoreEntitySet="PeopleInfo">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="PFName" ColumnName="PFName" />
+          <ScalarProperty Name="PLName" ColumnName="PLName" />
+          <ScalarProperty Name="PUsername" ColumnName="PUsername" />
+          <ScalarProperty Name="PPassword" ColumnName="PPassword" />
+          <ScalarProperty Name="PCenter" ColumnName="PCenter" />
+          <ScalarProperty Name="PSkills" ColumnName="PSkills" />
+          <ScalarProperty Name="PAvailability" ColumnName="PAvailability" />
+          <ScalarProperty Name="PAddress" ColumnName="PAddress" />
+          <ScalarProperty Name="PPhone" ColumnName="PPhone" />
+          <ScalarProperty Name="PEmail" ColumnName="PEmail" />
+          <ScalarProperty Name="PEducation" ColumnName="PEducation" />
+          <ScalarProperty Name="PLicense" ColumnName="PLicense" />
+          <ScalarProperty Name="PECName" ColumnName="PECName" />
+          <ScalarProperty Name="PECPhone" ColumnName="PECPhone" />
+          <ScalarProperty Name="PECEmail" ColumnName="PECEmail" />
+          <ScalarProperty Name="PECAddress" ColumnName="PECAddress" />
+          <ScalarProperty Name="PCopyLicense" ColumnName="PCopyLicense" />
+          <ScalarProperty Name="PCopySSn" ColumnName="PCopySSn" />
+          <ScalarProperty Name="PStatus" ColumnName="PStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
