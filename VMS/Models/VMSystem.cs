@@ -17,6 +17,7 @@ namespace VMS.Models
     {
         [Key]
         public int VMID { get; set; }
+
         [Display(Name="First Name")]
         public string VFirstName { get; set; }
         [Display(Name = "Last Name")]
